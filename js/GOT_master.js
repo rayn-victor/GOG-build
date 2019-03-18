@@ -43,13 +43,13 @@
 
     }
 
-    sigils.forEach(sigil => sigil.addEventListener('click', openLightBox));
+    //sigils.forEach(sigil => sigil.addEventListener('click', openLightBox));
     
     //animate banners
     sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
 
     /*add event listener for when video ends, it fires up ended*/
-
+    animateBanners.addEventListener('oncomplete', openLightBox);
     lbClose.addEventListener('click', closeLightBox)
 
 })();
