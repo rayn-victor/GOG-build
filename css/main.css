@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+.hidden
+{
+	display: none;
+}
+
+body
+{
+	background-image: url(../images/backdrop-2.jpg);
+	background-repeat: no-repeat;
+}
+
+video, header
+{
+	-webkit-animation-name: logoAnim;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	position: absolute;
+}
+
+@-webkit-keyframes logoAnim
+{
+	0% {
+		opacity: 1;
+		display: block;
+	}
+	60% {
+		 opacity: 1;
+	}
+	99% {
+		display:block;
+	}
+	100% {
+		display: none;
+		opacity: 0
+	}
+}
+
+
+.mainContainer
+{
+	height: 768px;
+	width: 1366px;
+}
+
+div
+{
+	-webkit-animation-name: pageAnim;
+	-webkit-animation-duration: 6s;
+	-webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes pageAnim
+{
+	0% {
+		opacity: 0;
+	}
+	80% {
+		transform: translateY(20px); 
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1
+	}
+}
+
+.background
+{
+	margin: 0 auto;
+	width: 1355px;
+	height: 768px;
+	position: absolute;
+}
+
+#background1 img
+{
+	position: absolute;
+	z-index: 3;
+}
+
+#background2 img
+{
+	position: relative;
+	z-index: 4;
+}
+
+#note1
+{
+	width: 260px;
+	height: 260px;
+	transform: translateX(10px) translateY(115px);
+	-webkit-animation-name: note1;
+	-webkit-animation-duration: 8s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes note1
+{
+	0% {
+		filter: brightness(130%); 
+	}
+	50%
+	{
+		filter: brightness(60%);
+	}
+	100% {
+		filter: brightness(130%);
+	}
+}
+
+
+#note2
+{
+	width: 250px;
+	height: 250px;
+	transform: translateY(280px) translateX(-130px);
+	-webkit-animation-name: note2;
+	-webkit-animation-duration: 6s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes note2
+{
+	0% {
+		filter: brightness(130%); 
+	}
+	50%
+	{
+		filter: brightness(60%);
+	}
+	100% {
+		filter: brightness(130%);
+	}
+}
+
+#note3
+{
+	width: 240px;
+	height: 240px;
+	transform: translateY(200px) translateX(570px);
+	-webkit-animation-name: note2;
+	-webkit-animation-duration: 9s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes note2
+{
+	0% {
+		filter: brightness(130%); 
+	}
+	50%
+	{
+		filter: brightness(60%);
+	}
+	100% {
+		filter: brightness(130%);
+	}
+}
+
+#v1
+{
+	width: 220px;
+	height: 220px;
+	transform: translateX(-380px) translateY(295px);
+	filter: brightness(80%);
+}
+
+#v2
+{
+	width: 220px;
+	height: 220px;
+	transform: translateX(-280px) translateY(140px);
+	filter: brightness(80%);
+}
+
+#v3
+{
+	width: 220px;
+	height: 220px;
+	transform: translateX(920px) translateY(-170px);
+	filter: brightness(80%);
+}
+/*.drumsticks
+{
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	position: absolute;
+	z-index: 7;
+}
+
+#drumstick1
+{
+	height: 250px;
+	width: 100px;
+	transform: rotate(-20deg);
+	padding: 30px;
+}*/
+
+.dropzones
+{
+	position: relative;
+	height: 768px;
+	width: 1366px;
+	resize: horizontal;
+	margin-top: -485px;
+	z-index: 6;
+}
+
+.dropzone:hover
+{	
+	transition: 2s ease;
+	-webkit-animation-name: dropzoneGlow;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes dropzoneGlow
+{
+	0% {
+		box-shadow: 0px 0px 10px 10px #ccc;
+		opacity: 0; 
+	}
+	30%
+	{
+		opacity: 1;
+	}
+	100% {
+		box-shadow: 0px 0px 30px 30px #ccc;
+		opacity: 0;
+	}
+}
+
+#crash
+{
+	position: relative;
+	width: 210px;
+	height: 200px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 340px;
+	top: 80px;
+}
+
+#hi-tom
+{
+	position: relative;
+	width: 160px;
+	height: 160px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 460px;
+	top: 130px;
+}
+
+#snare
+{
+	position: relative;
+	width: 130px;
+	height: 130px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 500px;
+	top: -150px;
+}
+
+#med-tom
+{
+	position: relative;
+	width: 160px;
+	height: 160px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 695px;
+	top: -160px;
+}
+
+#floor-tom
+{
+	position: relative;
+	width: 155px;
+	height: 155px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 745px;
+	top: -155px;
+}
+
+#bass-drum
+{
+	position: relative;
+	width: 170px;
+	height: 170px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 255px;
+	top: -470px;
+}
+
+#crash2
+{
+	position: relative;
+	width: 245px;
+	height: 245px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 850px;
+	top: -535px;
+}
+
+#ride
+{
+	position: relative;
+	width: 220px;
+	height: 220px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 690px;
+	top: -1085px;
+}
+
+#open-hat
+{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	cursor: pointer;
+	left: 845px;
+	top: -1150px;
+}
+
+#kick
+{
+	position: relative;
+	width: 20px;
+	height: 35px;
+	transform: rotate(-30deg);
+	cursor: pointer;
+	left: 460px;
+	top: -1160px;
+	border-radius: 5px;
+}
+
+.pianoKeys
+{
+	margin: 0 auto
+	height: 100px;
+	z-index: 7;
+	position: relative;
+	margin-top: -200px;
+}
+
+.rows
+{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-evenly;
+	z-index: 7;
+}
+
+.pianoKey
+{
+	height: 5rem;
+	width: 5rem;
+	background-color: rgba(0, 0, 0, .5);
+	border-radius: 100px;
+	border: solid white 3px;
+	z-index: 7;
+/*	-webkit-animation-name: pianoKeyGlow;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;*/
+	transition: all .5s;
+}
+
+/*@-webkit-keyframes pianoKeyGlow
+{
+	0% {
+		transform: scale(1);
+	}
+	50%
+	{
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}*/
+
+kbd
+{
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	line-height: 5rem;
+	margin-left: 2rem;
+	/*-webkit-animation: inherit;*/
+}
+
+.pianoKeyTransition
+{
+	/*height: 100px;
+	width: 100px;
+	border: none;
+	background-color: rgba(255, 255, 255, .5);*/
+	transform: scale(1.2);
+	height: 500px;
+	background-color: #eee;
+	transform: translateY(-500px);
+}
+/*	-webkit-animation-name: pianoKeyPlayTransition;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes pianoKeyPlayTransition
+{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}*/
