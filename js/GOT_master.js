@@ -81,7 +81,7 @@
     sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
 
     /*add event listener for when video ends, it fires up ended*/
-    video.addEventListener('ended', closeLightBox);
+    /*video.addEventListener('ended', closeLightBox);*/
     lbClose.addEventListener('click', closeLightBox);
 
 })();

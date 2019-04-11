@@ -1,91 +1,52 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Au.duo</title>
-		<link href="css/reset.css" rel="stylesheet" type="text/css">
-		<link href="css/main.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<header><video class="logoVideo" src="assets/logo-animation.mp4" muted autoplay></header>
-		<section id="mainContainer"><h1 class="hidden">Au.duo</h1>
-		<div class="background">
-			<div id="background1"><img src="images/strings.svg" alt="guitar strings" draggable="false"></div>
-			<div id="background2"><img src="images/drums.svg" alt="drums" draggable="false"></div>
-		</div>
-		<div class="designNotes">
-			<img src="images/note1.png" alt="music note" draggable="false" id="note1">
-			<img src="images/note2.png" alt="music note" draggable="false" id="note2">
-			<img src="images/note3.png" alt="music note" draggable="false" id="note3">
-			<img src="images/v1.png" alt="music design" draggable="false" id="v1">
-			<img src="images/v2.png" alt="music design" draggable="false" id="v2">
-			<img src="images/v3.png" alt="music design" draggable="false" id="v3">
-		</div>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Traversal</title>
+<link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
+</head>
 
-		<!-- <div class="drumsticks">
-			<div class="drumstick" id="drumstick1"></div>
-		</div> -->
+<body>
+    <main>
 
-		<div class="dropzones">
-			<div class="dropzone" id="crash"></div>
-			<div class="dropzone" id="hi-tom"></div>
-			<div class="dropzone" id="snare"></div>
-			<div class="dropzone" id="med-tom"></div>
-			<div class="dropzone" id="floor-tom"></div>
-			<div class="dropzone" id="bass-drum"></div>
-			<div class="dropzone" id="crash2"></div>
-			<div class="dropzone" id="ride"></div>
-			<div class="dropzone" id="open-hat"></div>
-			<div class="dropzone" id="kick"></div>
-		</div>
-		
-		<div class="audioSets">
-		<audio class="aud" src="assets/audio_clips/crash.wav"></audio>
-		<audio class="aud2" src="assets/audio_clips/hi-tom.wav"></audio>
-		<audio class="aud3" src="assets/audio_clips/snare.wav"></audio>
-		<audio class="aud4" src="assets/audio_clips/med-tom.wav"></audio>
-		<audio class="aud5" src="assets/audio_clips/floor-tom.wav"></audio>
-		<audio class="aud6" src="assets/audio_clips/bass-drum.wav"></audio>
-		<audio class="aud7" src="assets/audio_clips/crash2.wav"></audio>
-		<audio class="aud8" src="assets/audio_clips/ride.wav"></audio>
-		<audio class="aud9" src="assets/audio_clips/open-hat.wav"></audio>
-		<audio class="aud10" src="assets/audio_clips/kick.wav"></audio>
+    <section id="imageContainer">
+    	<div id="houseImages" style="right: 0"> <!-- add in all of the images to make a scrolling "banner" -->
+    		<img src="images/stark.jpg"/>
+    		<img src="images/baratheon.jpg"/>
+    		<img src="images/lannister.jpg"/>
+    		<img src="images/tully.jpg"/>
+    		<img src="images/greyjoy.jpg"/>
+    		<img src="images/arryn.jpg"/>
+        </div>
+    </section>
 
-		<audio data-key="90" src="assets/audio_clips/C.mp3"></audio>
-		<audio data-key="88" src="assets/audio_clips/D.mp3"></audio>
-		<audio data-key="67" src="assets/audio_clips/E.mp3"></audio>
-		<audio data-key="86" src="assets/audio_clips/F.mp3"></audio>
-		<audio data-key="66" src="assets/audio_clips/G.mp3"></audio>
-		<audio data-key="78" src="assets/audio_clips/A.mp3"></audio>
-		<audio data-key="77" src="assets/audio_clips/B.mp3"></audio>
-		</div>
+    <nav id="bottomNav">
+    	<ul id="navList">
+        	<!-- custom data attribute, allowing to pass custom data https://developer.mozilla.org/en/docs/Web/API/HTMLElement/dataset -->
+            <li><div class="sigil-container stark" data-offset="0"></div></li>
+            <li><div class="sigil-container baratheon" data-offset="1"></div></li>
+            <li><div class="sigil-container lannister" data-offset="2"></div></li>
+            <li><div class="sigil-container tully" data-offset="3"></div></li>
+            <li><div class="sigil-container greyjoy" data-offset="4"></div></li>
+            <li><div class="sigil-container arryn" data-offset="5"></div></li>
+        </ul>
+    </nav>
 
-		<div class="pianoKeys">
-			<div class="rows">
-				 <div data-key="90" class="pianoKey">
-			     <kbd>Z</kbd>
-			     </div>
-			     <div data-key="88" class="pianoKey">
-			     <kbd>X</kbd>
-			     </div>
-			     <div data-key="67" class="pianoKey">
-			     <kbd>C</kbd>
-			     </div>
-			     <div data-key="86" class="pianoKey">
-			     <kbd>V</kbd>
-			     </div>
-			     <div data-key="66" class="pianoKey">
-			     <kbd>B</kbd>
-			     </div>
-			     <div data-key="78" class="pianoKey">
-			     <kbd>N</kbd>
-			     </div>
-			     <div data-key="77" class="pianoKey">
-			     <kbd>M</kbd>
-			     </div>
-			</div>
-		</div>
-		</section>
-    <script src="js/main.js"></script>
-	</body>
+    <!-- replace this with the house name -->
+    <h1 class="house-name">clever tagline goes here</h1>
+
+    <!-- replace this with house details (github gist) -->
+    <p class="house-info">
+        this will ge replaced when we click on a shield.
+    </p>
+</main>  <!--end mainContainer-->
+
+    <!-- lighting for highlighted content -->
+    <section class="lightbox">
+        <!-- THIS WILL BE DYNAMIC SHORTLY -->
+        <div class="lightbox-off">X</div>
+    </section>
+<script src="js/GOT_master.js"></script>
+</body>
 </html>
