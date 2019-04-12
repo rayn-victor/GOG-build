@@ -28,21 +28,22 @@
 
             [`Targaryen`, `House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries since it conquered and unified the realm, before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile to the Free Cities of Essos across the Narrow Sea. Currently based on Dragonstone off of the eastern coast of Westeros, House Targaryen seeks to retake the Seven Kingdoms from House Lannister, who formally replaced House Baratheon as the royal House following the destruction of the Great Sept of Baelor.`],
 
-            [`Frey`,`House Frey of the Twins was the Great House of the Riverlands, having gained their position for their treachery against their former liege lords, House Tully, who were stripped of all their lands and titles for their rebellion against the Iron Throne; House Tully had supported the independence movement for the Kingdom of the North. The current head of the house is unknown following the assassinations of Lord Walder Frey and two of his sons, Lothar Frey and Walder Rivers, by the vengeful Arya Stark. This is made more complex by the subsequent assassination of all the male Freys soon after.`]
+            [`Frey`,`House Frey of the Twins was the Great House of the Riverlands, having gained their position for their treachery against their former liege lords, House Tully, who were stripped of all their lands and titles for their rebellion against the Iron Throne; House Tully had supported the independence movement for the Kingdom of the North. The current head of the house is unknown following the assassinations of Lord Walder Frey and two of his sons, Lothar Frey and Walder Rivers, by the vengeful Arya Stark. This is made more complex by the subsequent assassination of all the male Freys soon after.`],
+
+            [`Tyrell`,`House Tyrell is a prominent house of Westeros. Their coat of arms depicts a golden rose on a green field. A large, wealthy house, its wealth is only surpassed among the Great Houses by House Lannister, and the Tyrells can field the greatest armies. Additionally, if they call the ships of the Redwyne fleet, the lords of the Shield Islands, and the coastal lords, they can command a navy that equals if not surpasses the royal fleet of King's Landing. Their motto is “Growing Strong.”.`]
             ];
 
 
     function openLightBox() {
         //debugger;
         //make sure we have the right video source
-        let targetHouse = this.className.split(" ")[1];
-        console.lof('video playing!')
+        /*let targetHouse = this.className.split(" ")[1];
 
         //this gives us a lowercase house name --> the second class on allof the shields in stark, baratheon
         //clip this to uppercase
-        let targetVid = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);     
+        let targetVid = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1)*/;
 
-        video.src = `video/House-${targetVid}.mp4`;
+        video.src = `video/${tagline.textContent}.mp4`;
         lightbox.classList.add('lightbox-on');
         video.load();
         video.play();
@@ -64,24 +65,32 @@
         let currentOffset = this.dataset.offset * offSet;
 
         topBanners.style.right = currentOffset + "px";
-        // TweenMax.to(topBanners, 0.7, { right, currentOffset });
+        TweenMax.to(topBanners, 0.7, { currentOffset, onComplete: openLightBox });
         
         //house data function
         
-        tagline.textContent = `House ${houseData[this.dataset.offset][0]}`;
+        tagline.textContent = `House-${houseData[this.dataset.offset][0]}`;
         houseInfo.textContent = houseData[this.dataset.offset][1];
     }
 
     
 
-    // sigils.forEach(sigil => sigil.addEventListener('click', openLightBox));
+    //sigils.forEach(sigil => sigil.addEventListener('click', openLightBox));
 
     
     //animate banners
     sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
 
     /*add event listener for when video ends, it fires up ended*/
-    /*video.addEventListener('ended', closeLightBox);*/
+    video.addEventListener('ended', closeLightBox);
     lbClose.addEventListener('click', closeLightBox);
+
+    //greensock animation
+
+    let jonsock = new TimelineLite();
+    jonsock.to("#snow", 1, {scale:2});
+
+    let pageAnim = new TimelineLite();
+    pageAnim.to("main", 1, {opacity: 1, top:50});
 
 })();
